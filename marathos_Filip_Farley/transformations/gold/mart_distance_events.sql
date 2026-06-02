@@ -6,7 +6,7 @@ COMMENT 'Mart for distance-based events' AS
 SELECT 
     f.result_id,
     f.athlete_performance,
-    f.athlete_average_speed,
+    f.athlete_avg_speed,
     a.athlete_id,
     a.athlete_age_category,
     a.athlete_gender,
