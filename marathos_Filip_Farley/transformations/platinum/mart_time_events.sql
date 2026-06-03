@@ -16,6 +16,6 @@ SELECT
     e.event_country,
     e.event_distance_length
 FROM marathos.gold.fct_results f
-LEFT JOIN dim_event e ON f.event_id = e.event_id
-LEFT JOIN dim_athlete a ON f.athlete_id = a.athlete_id
+LEFT JOIN marathos.gold.dim_event e ON f.event_id = e.event_id
+LEFT JOIN marathos.gold.dim_athlete a ON f.athlete_id = a.athlete_id
 WHERE e.event_type = 'time';
