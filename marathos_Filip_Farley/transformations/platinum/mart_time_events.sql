@@ -1,8 +1,8 @@
 USE CATALOG marathos;
-USE SCHEMA gold;
+USE SCHEMA platinum;
 
-CREATE OR REFRESH MATERIALIZED VIEW marathos.gold.mart_distance_events
-COMMENT 'Mart for distance-based events' AS
+CREATE OR REFRESH MATERIALIZED VIEW marathos.platinum.mart_time_events
+COMMENT 'Mart for time-based events' AS
 SELECT 
     f.result_id,
     f.athlete_performance,
@@ -15,7 +15,7 @@ SELECT
     e.event_date,
     e.event_country,
     e.event_distance_length
-FROM fct_results f
+FROM marathos.gold.fct_results f
 LEFT JOIN dim_event e ON f.event_id = e.event_id
 LEFT JOIN dim_athlete a ON f.athlete_id = a.athlete_id
-WHERE e.event_type = 'distance';
+WHERE e.event_type = 'time';
