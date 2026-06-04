@@ -9,7 +9,10 @@ SELECT
     MAX_BY(event_country, event_date) AS event_country,
     MAX_BY(event_distance_length, event_date) AS event_distance_length,
     MAX_BY(event_distance_unit, event_date) AS event_distance_unit,
-    MAX_BY(event_number_of_finishers, event_date) AS event_number_of_finishers
+    MAX_BY(event_number_of_finishers, event_date) AS event_number_of_finishers,
+    MAX_BY(distance_in_km, event_date) as distance_in_km, 
+    MAX_BY(distance_category, event_date) as distance_category,
+    MAX_BY(time_category, event_date) as time_category
 FROM 
     marathos.silver.cleaned_marathos
 GROUP BY event_id;
