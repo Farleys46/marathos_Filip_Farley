@@ -1,0 +1,35 @@
+Table fct_results {
+ result_id integer [primary key]
+ event_id integer [ref: > dim_event.event_id]
+ athlete_id integer [ref: > dim_athlete.athlete_id]
+ athlete_performance string
+ athlete_performance_value double
+ performance_unit string
+ athlete_average_speed double
+}
+
+
+Table dim_event {
+ event_id integer [primary key]
+ event_type string
+ event_name string
+ event_date date
+ year_of_event integer
+ event_country string
+ event_distance_length string
+ event_distance_unit string
+ event_number_of_finishers integer
+ distance_category string
+ time_category string
+}
+
+
+
+Table dim_athlete {
+ athlete_id integer [primary key]
+ athlete_year_of_birth integer
+ athlete_gender string
+ athlete_age_category string
+ athlete_country string
+ athlete_club string
+}
